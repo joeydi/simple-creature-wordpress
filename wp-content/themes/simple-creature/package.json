@@ -1,7 +1,7 @@
 {
-  "name": "distefanolandscaping",
+  "name": "simple-creature-wordpress",
   "version": "0.0.1",
-  "description": "Website for di Stefano",
+  "description": "Headless CMS for Simple Creature",
   "author": "Joe di Stefano",
   "license": "MIT",
   "browserslist": [
