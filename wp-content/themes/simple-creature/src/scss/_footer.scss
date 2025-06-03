@@ -1,0 +1,144 @@
+footer {
+  margin-top: 28vw;
+  padding: 10px 0 60px;
+  background-color: $darkest-grey;
+  color: $white;
+
+  .form-wrap {
+    margin-top: -20vw;
+    margin-bottom: 40px;
+
+    form {
+      padding: 30px;
+      background-color: $contrast-green;
+      color: $white;
+    }
+  }
+
+  .form-group {
+    display: flex;
+    border-bottom: 1px solid $white;
+
+    ::-webkit-input-placeholder {
+      color: $white;
+    }
+    ::-moz-placeholder {
+      color: $white;
+    }
+    :-ms-input-placeholder {
+      color: $white;
+    }
+    :-moz-placeholder {
+      color: $white;
+    }
+
+    input[type="email"] {
+      width: 100%;
+      appearance: none;
+      border: none;
+      background: transparent;
+      padding: 5px 10px 5px 0;
+      color: $white;
+    }
+
+    button[type="submit"] {
+      appearance: none;
+      border: none;
+      background: transparent;
+      padding: 5px;
+      color: $white;
+
+      svg {
+        display: block;
+        width: 30px;
+        height: 30px;
+      }
+    }
+  }
+
+  .description {
+    font-family: $font-family-serif;
+  }
+
+  ul.menu {
+    display: flex;
+    flex-flow: row wrap;
+    list-style: none;
+    margin-left: -10px;
+    padding: 0;
+
+    a {
+      display: block;
+      padding: 10px;
+      font-weight: $font-weight-semibold;
+      color: $white;
+      transition: color 0.25s;
+
+      &:hover {
+        text-decoration: none;
+        color: $green;
+      }
+    }
+  }
+
+  ul.social {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+    padding: 0;
+    list-style: none;
+
+    li {
+      margin: 0;
+    }
+
+    img {
+      width: auto;
+      height: 30px;
+    }
+  }
+
+  @include md {
+    padding: 10px 0 80px;
+
+    .form-wrap {
+      position: relative;
+      margin-top: calc(-20vw - 20px);
+      margin-bottom: 60px;
+      padding-top: 10px;
+      overflow: hidden;
+
+      picture {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        width: 100%;
+        height: 100%;
+        transform: translateY(-50%);
+      }
+
+      form {
+        position: relative;
+        width: 50%;
+        margin-top: 20vw;
+        padding: 4vw;
+      }
+    }
+
+    ul.menu {
+      margin-top: -8px;
+      margin-bottom: 0;
+
+      li {
+        width: 33.33%;
+      }
+    }
+
+    ul.social {
+      width: 33.33%;
+      padding-left: 10px;
+      float: right;
+      transform: translateY(-100%);
+    }
+  }
+}

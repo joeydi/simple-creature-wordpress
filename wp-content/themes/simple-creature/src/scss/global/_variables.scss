@@ -1,0 +1,152 @@
+// Bootstrap Config
+$enable-smooth-scroll: false;
+$enable-rounded: false;
+$enable-rfs: false;
+
+// Grid
+$grid-gutter-width: 24px;
+
+$xxs: 0;
+$xs: 375px;
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1280px;
+$xxl: 1600px;
+
+$grid-breakpoints: (
+  xxs: $xxs,
+  xs: $xs,
+  sm: $sm,
+  md: $md,
+  lg: $lg,
+  xl: $xl,
+  xxl: $xxl,
+);
+
+$container-max-widths: (
+  xl: 1440px,
+);
+
+// Colors
+$white: #ffffff;
+$lightest-grey: #f4f4f4;
+$lighter-grey: #d6ddde;
+$light-grey: #adbabd;
+$grey: #85989c;
+$dark-grey: #5c757b;
+$darker-grey: #33535a;
+$darkest-grey: #222222;
+$black: #0a3039;
+
+$green: #48a27b;
+$contrast-green: #3a8263;
+$dark-green: #354e4d;
+$red: #dc3545;
+$primary: $green;
+$secondary: $dark-green;
+
+$green-1: #49a27c;
+$green-2: #3a8263;
+$green-3: #18674f;
+$green-4: #354e4d;
+$blue-1: #499da2;
+$blue-2: #216875;
+$blue-3: #13555e;
+
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "green-1": $green-1,
+  "green-2": $green-2,
+  "green-3": $green-3,
+  "green-4": $green-4,
+  "blue-1": $blue-1,
+  "blue-2": $blue-2,
+  "blue-3": $blue-3,
+  "black": $black,
+  "light-grey": $light-grey,
+  "white": $white,
+);
+
+$body-bg: $white;
+$body-color: $black;
+
+// Fonts
+$font-family-serif: "DM Serif Display", serif;
+$font-family-sans-serif: "Source Sans Pro", sans-serif;
+$font-family-base: $font-family-sans-serif;
+
+$font-weight-regular: 400;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+$font-size-base: 1rem;
+$font-weight-base: $font-weight-regular;
+$line-height-base: 1.5;
+
+$paragraph-margin-bottom: 1.5rem;
+$form-group-margin-bottom: 1.5rem;
+$label-margin-bottom: 0.25rem;
+$input-border-radius: 0;
+$input-padding-y: 0.5rem;
+$input-padding-x: 1rem;
+
+$headings-margin-bottom: 1.5rem;
+$headings-font-family: $font-family-serif;
+$headings-font-weight: $font-weight-regular;
+$headings-line-height: 1.125;
+
+$h1-font-size: fluid(28, 72);
+$h2-font-size: fluid(24, 42);
+$h3-font-size: fluid(20, 24);
+$h4-font-size: fluid(18, 20);
+$h5-font-size: fluid(18, 20);
+$h6-font-size: fluid(18, 20);
+
+$lead-font-size: fluid(20, 28);
+
+$btn-padding-y: 0.5rem;
+$btn-padding-x: 1.125rem;
+$btn-font-size: rem(14px);
+$btn-font-weight: $font-weight-bold;
+$btn-font-family: $font-family-sans-serif;
+$btn-border-radius: 0;
+
+$transition-fade: opacity 0.25s;
+
+// Transitions
+$zippy: cubic-bezier(0.19, 0.01, 0, 0.99);
+$snappy: cubic-bezier(0.47, 0.03, 0.29, 1);
+$ease-in: cubic-bezier(0, 0, 0.79, 0.15);
+$ease-out: cubic-bezier(0, 0.5, 0.5, 1);
+
+$small-shadow: 0 0 6px rgba(0, 0, 0, 0.15);
+
+// Spacing
+$spacers: (
+  5: 5px,
+  10: 10px,
+  12: 12px,
+  15: 15px,
+  16: 16px,
+  20: 20px,
+  24: 24px,
+  25: 25px,
+  30: 30px,
+  32: 32px,
+  35: 35px,
+  36: 36px,
+  40: 40px,
+  45: 45px,
+  48: 48px,
+  50: 50px,
+  60: 60px,
+  70: 70px,
+  75: 75px,
+  80: 80px,
+  90: 90px,
+  100: 100px,
+  110: 110px,
+  120: 120px,
+);

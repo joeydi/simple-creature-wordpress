@@ -1,0 +1,41 @@
+@use "sass:math";
+
+@function rem($size) {
+  @return math.div($size, 16px) * 1rem;
+}
+
+@function letter-spacing($val) {
+  @return math.div($val, 1000) * 1em;
+}
+
+@function aspect($width, $height) {
+  @return math.div($height, $width) * 100%;
+}
+
+@function strip-unit($value) {
+  @return math.div($value, ($value * 0 + 1));
+}
+
+@function fluid($minValue, $maxValue, $minWidth: $sm, $maxWidth: $xl) {
+  $minValue: strip-unit($minValue);
+  $maxValue: strip-unit($maxValue);
+  $minWidth: strip-unit($minWidth);
+  $maxWidth: strip-unit($maxWidth);
+
+  $slope: math.div(($maxValue - $minValue), ($maxWidth - $minWidth));
+  $yAxisIntersection: -$minWidth * $slope + $minValue;
+
+  @return clamp(#{$minValue}px, #{$yAxisIntersection}px + #{$slope * 100}vw, #{$maxValue}px);
+}
+
+@function fluid-reverse($minValue, $maxValue, $minWidth: $sm, $maxWidth: $xl) {
+  $minValue: strip-unit($minValue);
+  $maxValue: strip-unit($maxValue);
+  $minWidth: strip-unit($minWidth);
+  $maxWidth: strip-unit($maxWidth);
+
+  $slope: math.div(($maxValue - $minValue), ($maxWidth - $minWidth));
+  $yAxisIntersection: -$minWidth * $slope + $minValue;
+
+  @return clamp(#{$maxValue}px, #{$yAxisIntersection}px + #{$slope * 100}vw, #{$minValue}px);
+}

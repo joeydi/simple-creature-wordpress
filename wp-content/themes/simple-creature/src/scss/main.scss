@@ -1,0 +1,352 @@
+@import "global/functions";
+@import "global/variables";
+
+@import "bootstrap/scss/bootstrap-utilities";
+@import "bootstrap/scss/bootstrap-reboot";
+@import "bootstrap/scss/bootstrap-grid";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/tables";
+@import "bootstrap/scss/type";
+@import "bootstrap/scss/forms";
+@import "bootstrap/scss/buttons";
+
+@import "global/mixins";
+@import "global/plugins";
+@import "global/fonts";
+@import "global/typography";
+@import "global/transitions";
+@import "components/block-featured-projects";
+@import "components/block-testimonial-slider";
+@import "nav";
+@import "footer";
+@import "forms";
+@import "flexible-content";
+@import "blog";
+@import "about";
+@import "post-content";
+@import "print";
+
+:root {
+  --containerPadding: #{fluid(20px, 80px, $sm, $xxl)};
+}
+
+body {
+  background-color: $white;
+}
+
+main {
+  min-height: calc(100vh - 65px);
+  padding-top: 1px;
+  transition: opacity 0.25s linear 0.25s, transform 0.35s $ease-out 0.25s;
+
+  @include md {
+    min-height: calc(100vh - 500px);
+  }
+}
+
+.container,
+.container-fluid {
+  padding-left: var(--containerPadding);
+  padding-right: var(--containerPadding);
+}
+
+.container-fluid {
+  max-width: 1920px;
+}
+
+// .row {
+//   margin-left: fluid-reverse(-12, -36);
+//   margin-right: fluid-reverse(-12, -36);
+
+//   > div {
+//     padding-left: fluid(12, 36);
+//     padding-right: fluid(12, 36);
+//   }
+// }
+
+.transition {
+  position: fixed;
+  z-index: 20;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+  view-transition-name: foobar;
+
+  .bg {
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 300%;
+    background: $white url("../img/topo.svg") 0 0 repeat;
+    background-size: 800px 800px;
+  }
+}
+
+[class*="aspect"] {
+  position: relative;
+  overflow: hidden;
+  display: block;
+
+  > img,
+  > video {
+    @include fill;
+    object-fit: cover;
+    display: block;
+  }
+}
+
+.lazyload,
+.lazyloading,
+.hero-video video {
+  opacity: 0;
+  transform: scale(1.1);
+  transition: opacity 0.5s linear, transform 0.5s $ease-out;
+}
+
+.lazyloaded,
+.hero-video video.loaded {
+  opacity: 1;
+  transform: scale(1.001);
+  transition: opacity 0.5s linear, transform 0.5s $ease-out;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+svg,
+iframe,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+// Media Aspect Ratios
+.aspect-100,
+.aspect-75,
+.aspect-66,
+.aspect-50,
+.aspect-33,
+.aspect-25 {
+  position: relative;
+  display: block;
+
+  > img,
+  > video {
+    @include fill;
+    object-fit: cover;
+  }
+}
+
+.aspect-100 {
+  padding-top: 100%;
+}
+.aspect-75 {
+  padding-top: 75%;
+}
+.aspect-66 {
+  padding-top: 66%;
+}
+.aspect-50 {
+  padding-top: 50%;
+}
+.aspect-33 {
+  padding-top: 33%;
+}
+.aspect-25 {
+  padding-top: 25%;
+}
+
+.aspect-portrait {
+  padding-top: 10/8 * 100%;
+}
+.aspect-square {
+  padding-top: 100%;
+}
+.aspect-block {
+  padding-top: 5/6 * 100%;
+}
+.aspect-landscape {
+  padding-top: 2/3 * 100%;
+}
+.aspect-video {
+  padding-top: 9/16 * 100%;
+}
+.aspect-hero {
+  padding-top: 5/11 * 100%;
+}
+
+// Background Colors
+
+.bg-white {
+  background-color: $white;
+}
+.bg-lightest-grey {
+  background-color: $lightest-grey;
+}
+.bg-lighter-grey {
+  background-color: $lighter-grey;
+}
+.bg-light-grey {
+  background-color: $light-grey;
+}
+.bg-grey {
+  background-color: $grey;
+}
+.bg-dark-grey {
+  background-color: $dark-grey;
+}
+.bg-darker-grey {
+  background-color: $darker-grey;
+}
+.bg-black {
+  background-color: $black;
+}
+.bg-green {
+  background-color: $green;
+}
+.bg-dark-green {
+  background-color: $dark-green;
+}
+
+:focus-visible,
+button:focus-visible {
+  outline: none;
+  box-shadow: $input-btn-focus-box-shadow;
+}
+
+.animate,
+.animate-children > * {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+picture.animate {
+  &::before {
+    content: " ";
+    @include fill;
+    z-index: 1;
+    transition: transform 0.5s $ease-in;
+  }
+
+  &.active {
+    transform: translate3d(0, -100%, 0);
+  }
+}
+
+.alignright {
+  display: inline-block;
+  float: right;
+  margin: 0 0 1rem 2rem;
+  max-width: 50%;
+
+  @include lg {
+    margin-right: -80px;
+  }
+}
+
+.alignleft {
+  display: inline-block;
+  float: left;
+  margin: 0 2rem 1rem 0;
+  max-width: 50%;
+
+  @include lg {
+    margin-left: -80px;
+  }
+}
+
+.aligncenter,
+.wp-block-image .aligncenter {
+  display: block;
+  clear: both;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include md {
+    max-width: none;
+    width: calc(10 / 12 * #{map-get($container-max-widths, "md")} - 80px);
+    margin: 40px 0 40px 50%;
+    transform: translateX(-50%);
+  }
+
+  @include lg {
+    width: calc(10 / 12 * #{map-get($container-max-widths, "lg")} - 120px);
+    margin: 60px 0 60px 50%;
+  }
+
+  @include xl {
+    width: calc(10 / 12 * #{map-get($container-max-widths, "xl")} - 120px);
+  }
+
+  @include xxl {
+    width: calc(10 / 12 * #{map-get($container-max-widths, "xxl")} - 120px);
+  }
+}
+
+.wp-caption-text {
+  width: 80%;
+  margin-top: 0.75rem;
+  font-size: rem(14px);
+}
+
+/**
+ * Magnific Popup
+ */
+
+.mfp-wrap {
+  -webkit-overflow-scrolling: touch;
+  transform: translateZ(0);
+}
+
+.mfp-bg {
+  background-color: $white;
+}
+
+.mfp-fade.mfp-bg {
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.mfp-fade.mfp-bg.mfp-ready {
+  opacity: 1;
+}
+
+.mfp-fade.mfp-bg.mfp-removing {
+  opacity: 0;
+}
+
+.mfp-fade.mfp-wrap .mfp-content {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.5s linear, transform 1s $ease-out;
+}
+
+.mfp-fade.mfp-wrap.mfp-ready .mfp-content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.mfp-fade.mfp-wrap.mfp-removing .mfp-content {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.mfp-iframe-scaler iframe {
+  box-shadow: none;
+}
+
+.mfp-close {
+  right: 10px;
+  top: 10px;
+  font-size: 44px;
+  color: $black;
+}

@@ -1,0 +1,166 @@
+label {
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: $font-weight-bold;
+  font-size: rem(16px);
+  color: $dark-green;
+}
+
+.form-bg {
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  right: 0;
+  top: 10vh;
+  bottom: 10vh;
+  background: url("../img/topo.svg") 0 0 repeat;
+  background-size: 800px auto;
+}
+
+.matrix-header {
+  display: flex;
+  align-items: center;
+  margin-left: 100px;
+
+  > * {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.matrix-row {
+  display: flex;
+  align-items: center;
+  margin: 5px 0;
+  padding: 10px;
+  background-color: darken($lightest-grey, 3%);
+  border-radius: 3px;
+
+  > p {
+    width: 100px;
+    margin-bottom: 5px;
+  }
+}
+
+// Hide the Google ReCAPTCHA badge
+.grecaptcha-badge {
+  visibility: hidden;
+}
+
+// Gravity Forms
+
+.gform_wrapper.form-topo_wrapper {
+  position: relative;
+  z-index: 1;
+  margin: 40px -40px;
+  padding: 80px 40px 40px;
+  background-color: $lightest-grey;
+
+  &::before {
+    content: " ";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 40px;
+    background: url("../img/topo.svg") 0 0 repeat;
+    background-size: 800px auto;
+  }
+}
+
+.gform_wrapper.gravity-theme {
+  .gform_required_legend {
+    display: none;
+  }
+
+  .gform_heading {
+    margin-bottom: 1.5rem;
+  }
+
+  .gsection {
+    margin: 1.5rem 0;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    .gsection_title,
+    .gsection_description {
+      margin-bottom: 0.5rem;
+      padding-bottom: 0;
+    }
+  }
+
+  .gfield--type-choice .gfield_label {
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: $font-weight-bold;
+    font-size: rem(16px);
+    color: $dark-green;
+  }
+
+  .gchoice {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+  }
+
+  .gfield-choice-input {
+    margin-top: rem(3px);
+    margin-right: rem(8px);
+  }
+
+  .gfield-choice-input + label {
+    line-height: 1.2;
+  }
+
+  .gfield_checkbox label,
+  .gfield_radio label {
+    text-transform: none;
+    font-weight: $font-weight-regular;
+  }
+
+  .gchoice_other_control {
+    margin-left: rem(6px) !important;
+    margin-top: rem(-10px) !important;
+  }
+
+  .gform_validation_errors {
+    margin-bottom: 1rem;
+    padding: 1rem;
+
+    > h2 {
+      font-weight: $font-weight-bold;
+      font-size: rem(16px);
+      font-family: $font-family-sans-serif;
+    }
+  }
+
+  .gfield_validation_message,
+  .validation_message {
+    margin: 0;
+    padding: rem(5px) !important;
+    border: none;
+    font-size: rem(14px);
+  }
+
+  @include sm {
+    .gfield.two-columns .gfield_radio,
+    .gfield.two-columns .gfield_checkbox {
+      display: flex;
+      flex-flow: row wrap;
+
+      .gchoice {
+        width: 50%;
+        padding-right: 2rem;
+      }
+    }
+  }
+}

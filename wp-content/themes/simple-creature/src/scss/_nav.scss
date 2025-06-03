@@ -1,0 +1,330 @@
+nav {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  padding: 15px 0;
+  background-color: $white;
+  view-transition-name: nav;
+
+  .skip {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    background-color: $light-grey;
+    color: $primary;
+
+    &:focus {
+      height: auto;
+      padding: 5px 10px;
+    }
+  }
+
+  .logo {
+    display: block;
+
+    img {
+      width: auto;
+      height: 50px;
+    }
+  }
+
+  .menu-toggle {
+    position: relative;
+    appearance: none;
+    display: block;
+    width: 28px;
+    height: 28px;
+    background: transparent;
+    border: none;
+
+    .bar {
+      position: absolute;
+      left: 0;
+      top: 12px;
+      display: block;
+      width: 100%;
+      height: 3px;
+      background-color: $green;
+      transition: opacity 0.25s, transform 0.25s $snappy;
+
+      &:nth-child(1) {
+        transform: translateY(-8px);
+      }
+      &:nth-child(3) {
+        transform: translateY(8px);
+      }
+    }
+  }
+
+  .menu-wrap {
+    position: absolute;
+    left: 0;
+    top: 65px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    width: 100%;
+    height: calc(100vh - 65px);
+    background-color: $white;
+    visibility: hidden;
+    opacity: 0;
+    overflow: scroll;
+    transform: translateY(-20px);
+    transition: opacity 0.25s linear 0s, transform 0.35s $ease-in 0s, visibility 0s linear 0.35s;
+  }
+
+  ul.menu {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    margin: 0;
+    padding: 10px 20px 0;
+    list-style: none;
+    background-color: $white;
+
+    > li {
+      text-align: center;
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      > a {
+        display: inline-block;
+        padding: 20px;
+        white-space: nowrap;
+        font-family: $font-family-serif;
+        font-size: rem(20px);
+        color: $black;
+      }
+    }
+
+    > li.menu-item-has-children {
+      width: 100%;
+
+      > a {
+        padding-bottom: 10px;
+      }
+    }
+  }
+
+  ul.sub-menu {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 0 0 15px;
+    padding: 0;
+    list-style: none;
+
+    li {
+      border-bottom: none;
+
+      a {
+        display: block;
+        padding: 10px 20px;
+        text-transform: none;
+        line-height: 1.5;
+        white-space: nowrap;
+        font-weight: $font-weight-semibold;
+        font-size: rem(14px);
+        color: $black;
+      }
+
+      &.has-icon > a {
+        padding-left: 66px;
+      }
+    }
+
+    img {
+      display: block;
+      width: 66px;
+      height: 36px;
+      float: left;
+      margin-left: -70px;
+      object-fit: contain;
+    }
+
+    span.description {
+      display: block;
+      font-weight: $font-weight-regular;
+      font-size: rem(13px);
+    }
+  }
+
+  @include lg {
+    .container {
+      margin-top: 15px;
+    }
+
+    .menu-toggle {
+      display: none;
+    }
+
+    .logo img {
+      height: fluid(50, 70, $lg, $xl);
+    }
+
+    .menu-wrap {
+      position: relative;
+      left: 0;
+      top: 8px;
+      width: auto;
+      height: auto;
+      background-color: transparent;
+      visibility: visible;
+      opacity: 1;
+      transform: none;
+      overflow: visible;
+    }
+
+    ul.menu > li > a,
+    ul.sub-menu li a {
+      font-family: $font-family-sans-serif;
+      font-weight: $font-weight-semibold;
+      font-size: rem(16px);
+    }
+
+    ul.menu {
+      display: flex;
+      flex-flow: row nowrap;
+      padding: 0;
+      background-color: transparent;
+
+      > li {
+        position: relative;
+        padding: 15px;
+        border-bottom: none;
+
+        &:first-child {
+          padding-left: 0;
+        }
+
+        > a {
+          padding: 10px 0;
+        }
+      }
+    }
+
+    ul.sub-menu {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      display: block;
+      padding: 0;
+      border-radius: 3px;
+      background-color: $white;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+      visibility: hidden;
+      opacity: 0;
+      transform: translate(-50%, -10px);
+      transition: opacity 0.15s linear 0.1s, transform 0.35s $snappy 0.1s, visibility 0s linear 0.25s;
+
+      &:before {
+        content: " ";
+        position: absolute;
+        right: 53px;
+        top: -23px;
+        display: block;
+        width: 40px;
+        height: 23px;
+        // background: 0 0 url('../img/menu-caret.png') no-repeat;
+        background-size: 40px 23px;
+      }
+
+      li a {
+        padding: 10px 30px;
+        text-align: center;
+        transition: background-color 0.25s;
+
+        &:hover {
+          text-decoration: none;
+          background-color: $lightest-grey;
+        }
+      }
+    }
+
+    li.menu-item-has-children {
+      > a::after {
+        content: " ";
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        margin-left: 7px;
+        background: 50% 50% url("../img/caret.svg") no-repeat;
+        background-size: contain;
+      }
+
+      &.hover ul.sub-menu,
+      &:focus-within ul.sub-menu {
+        z-index: 1;
+        visibility: visible;
+        opacity: 1;
+        transform: translate(-50%, 0);
+        transition: opacity 0.25s linear 0s, transform 0.35s $snappy 0s, visibility 0s linear 0s;
+      }
+    }
+  }
+
+  @include xl {
+    .menu-wrap {
+      top: 14px;
+    }
+
+    ul.menu > li > a,
+    ul.sub-menu li a {
+      font-size: rem(16px);
+    }
+  }
+}
+
+html.menu-active {
+  nav {
+    .menu-toggle .bar {
+      &:nth-child(1) {
+        transform: translateY(0) rotate(-45deg);
+      }
+      &:nth-child(2) {
+        transform: scale(0);
+      }
+      &:nth-child(3) {
+        transform: translateY(0) rotate(45deg);
+      }
+    }
+
+    .menu-wrap {
+      visibility: visible;
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 0.25s linear 0.25s, transform 0.35s $ease-out 0.25s, visibility 0s linear 0s;
+    }
+  }
+
+  main {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.25s linear 0s, transform 0.35s $ease-out 0s;
+  }
+}
+
+.admin-nav {
+  position: fixed;
+  z-index: 11;
+  right: 0;
+  top: 0;
+  display: flex;
+  padding: 5px 10px;
+  background-color: $white;
+
+  a {
+    display: block;
+    padding: 5px 10px;
+    font-size: rem(24px);
+    text-transform: uppercase;
+  }
+}

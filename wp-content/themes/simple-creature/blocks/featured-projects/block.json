@@ -1,0 +1,20 @@
+{
+  "name": "acf/featured-projects",
+  "title": "Featured Projects",
+  "description": "A custom Featured Projects block.",
+  "category": "formatting",
+  "icon": "columns",
+  "keywords": [
+    "content",
+    "fullwidth",
+    "alignfull"
+  ],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "block.php"
+  },
+  "supports": {
+    "anchor": true,
+    "classname": true
+  }
+}

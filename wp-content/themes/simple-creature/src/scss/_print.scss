@@ -1,0 +1,16 @@
+@media print {
+    a.print,
+    button.print {
+        display: none !important;
+    }
+
+    .no-print {
+        display: none !important;
+    }
+
+    .toggle,
+    .nav-toggle,
+    .sidebar-toggle {
+        display: none !important;
+    }
+}

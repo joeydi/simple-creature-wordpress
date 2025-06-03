@@ -1,0 +1,40 @@
+@use "sass:math";
+
+@import "global/functions";
+@import "global/variables";
+
+@import "bootstrap/scss/bootstrap-utilities";
+
+.editor-styles-wrapper {
+  font-family: $font-family-sans-serif;
+  font-size: fluid(16, 18);
+  line-height: $line-height-base;
+  color: $body-color;
+
+  .editor-post-title {
+    margin-bottom: 1.5rem !important;
+    font-size: fluid(30, 48);
+  }
+
+  @import "bootstrap/scss/bootstrap-reboot";
+  @import "bootstrap/scss/bootstrap-grid";
+  @import "bootstrap/scss/mixins";
+  @import "bootstrap/scss/tables";
+  @import "bootstrap/scss/type";
+  @import "bootstrap/scss/forms";
+  @import "bootstrap/scss/buttons";
+
+  @import "global/mixins";
+  @import "global/plugins";
+  @import "global/fonts";
+  @import "global/typography";
+  @import "global/transitions";
+  @import "nav";
+  @import "footer";
+  @import "forms";
+  @import "flexible-content";
+  @import "blog";
+  @import "about";
+  @import "post-content";
+  @import "print";
+}

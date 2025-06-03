@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="25px" height="18px" viewBox="0 0 25 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>Path</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Footer" transform="translate(-618.000000, -278.000000)" fill="currentColor" fill-rule="nonzero">
+            <g id="Form-Container-Copy">
+                <g transform="translate(205.000000, 1.000000)">
+                    <g id="Form" transform="translate(0.000000, 134.000000)">
+                        <g id="Email" transform="translate(41.000000, 142.000000)">
+                            <polygon id="Path" transform="translate(384.727273, 10.000000) rotate(90.000000) translate(-384.727273, -10.000000) " points="376 6.93927126 384.774963 -2 393.454545 6.93927126 391.737705 8.59109312 385.919523 2.7611336 385.919523 22 383.535022 22 383.535022 2.7611336 377.716841 8.59109312"></polygon>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

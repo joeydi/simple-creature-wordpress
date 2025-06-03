@@ -1,0 +1,42 @@
+// This is the class we use to break out of the inset post content column
+.full-width-block {
+  width: 100vw;
+  position: relative;
+  left: -50vw;
+  margin-left: 50%;
+}
+
+// Inside the editor use 100% instead of 100vw
+.wp-block .full-width-block {
+  width: 100%;
+  left: -50%;
+}
+
+// Remove section margin from the last block
+.post-content-blocks > *:last-child {
+  margin-bottom: 0;
+}
+
+// Offset the footer margin if the last block has a background
+.post-content:has(.full-width-block.has-background:last-child) {
+  margin-bottom: 0;
+}
+
+// Stack full-width-blocks with backgrounds
+.full-width-block.has-background + .full-width-block.has-background,
+.wp-block:has(.full-width-block.has-background) + .wp-block:has(.full-width-block.has-background) .section-margin-top {
+  margin-top: 0 !important;
+}
+
+// Remove doubled up padding for consecutive blocks with the same background color
+@each $color in ("light-blue", "light-orange") {
+  .full-width-block.content-padding.bg-#{$color} + .full-width-block.content-padding.bg-#{$color} {
+    padding-top: 0;
+  }
+}
+
+// Add margin-top to post-content first child if it's not a .full-width-block
+// .post-content-blocks > .page-header + *:not(.full-width-block.has-background),
+// .wp-block:has(.page-header) + .wp-block:not(:has(.full-width-block.has-background)) {
+//   margin-top: fluid(40px, 120px, $sm, $xl);
+// }

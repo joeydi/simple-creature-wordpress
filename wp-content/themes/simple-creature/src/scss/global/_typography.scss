@@ -1,0 +1,273 @@
+body {
+  font-size: fluid(16, 18);
+}
+
+h1,
+.h1 {
+  line-height: 1;
+  text-wrap: balance;
+}
+
+h2,
+.h2 {
+  text-wrap: pretty;
+}
+
+h3,
+.h3 {
+  text-wrap: pretty;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+ol,
+ul,
+dl {
+  margin-bottom: 1.5rem;
+}
+
+ul.pills {
+  list-style: none;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+
+  li {
+    margin: 5px;
+    padding: 0.5rem 1.25rem 0.6rem;
+    background: $lightest-grey;
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-weight: $font-weight-bold;
+  }
+
+  a {
+    display: block;
+    margin: -0.5rem -1.25rem -0.6rem;
+    padding: 0.5rem 1.25rem 0.6rem;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+ul.features {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-start;
+  margin-top: 2em;
+  padding: 0;
+  list-style: none;
+
+  li {
+    margin: 0.25rem 0;
+    padding: 0.25rem 1rem 0.25rem 0.5rem;
+    background-color: $lightest-grey;
+    border-left: 3px solid $green;
+
+    a {
+      color: #333;
+    }
+
+    svg {
+      margin-right: 0.25rem;
+      color: $green;
+    }
+  }
+}
+
+ul.icons,
+ul.is-style-icons,
+ol.icons,
+ol.is-style-icons {
+  margin: 2rem 0;
+  padding: 0;
+  list-style: none;
+  font-size: fluid(20, 24);
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+
+    img,
+    svg {
+      flex-shrink: 0;
+      width: 1.5em !important;
+    }
+  }
+
+  a {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+}
+
+hr,
+.wp-block-separator {
+  position: relative;
+  margin: 40px 0;
+  padding-top: 1px;
+  border: none;
+  clear: both;
+
+  &::after {
+    content: " ";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 120px;
+    height: 3px;
+    transform: translate(-50%, -50%);
+    background-color: $lighter-grey;
+  }
+
+  @include lg {
+    margin: 60px 0;
+  }
+}
+
+a {
+  text-decoration: none;
+  transition: color 0.25s;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  margin: 0.5rem 1rem 0.5rem 0;
+  text-transform: uppercase;
+  white-space: nowrap;
+
+  &:hover .icon:last-child {
+    transform: translateX(5px);
+  }
+
+  .icon:first-child {
+    margin-right: 10px;
+  }
+
+  .icon:last-child {
+    margin-left: 10px;
+    transition: transform 0.25s $ease-out;
+  }
+}
+
+.btn-primary {
+  background-color: $contrast-green;
+  border-color: $contrast-green;
+  color: $white;
+}
+
+.btn-link {
+  font-weight: $font-weight-semibold;
+}
+
+.wp-block-button .wp-block-button__link {
+  text-transform: uppercase;
+  font-weight: $font-weight-semibold;
+  font-size: 1rem;
+}
+
+@mixin eyebrow {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  font-weight: $font-weight-bold;
+  font-size: 1rem;
+  color: $green;
+}
+.eyebrow,
+.is-style-eyebrow {
+  @include eyebrow;
+}
+
+.lead,
+.is-style-lead {
+  font-size: fluid(20, 28);
+  line-height: 1.25;
+}
+
+svg.icon {
+  display: inline-block;
+  width: 0.9em;
+  height: 0.9em;
+}
+
+blockquote {
+  font-weight: $font-weight-regular;
+  font-size: fluid(20, 28);
+
+  cite {
+    font-weight: $font-weight-semibold;
+    font-style: normal;
+  }
+
+  cite:has(strong) {
+    font-weight: $font-weight-regular;
+  }
+}
+
+.heading-overlap {
+  margin-top: fluid-reverse(-20, -60);
+  position: relative;
+  top: fluid-reverse(-50, -115);
+}
+
+// Colors
+
+.text-white {
+  color: $white;
+}
+.text-lightest-grey {
+  color: $lightest-grey;
+}
+.text-lighter-grey {
+  color: $lighter-grey;
+}
+.text-light-grey {
+  color: $light-grey;
+}
+.text-grey {
+  color: $grey;
+}
+.text-dark-grey {
+  color: $dark-grey;
+}
+.text-darker-grey {
+  color: $darker-grey;
+}
+.text-darkest-grey {
+  color: $darkest-grey;
+}
+.text-black {
+  color: $black;
+}
+.text-green {
+  color: $green;
+}
+.text-dark-green {
+  color: $dark-green;
+}
+
+.text-wrap-balance {
+  text-wrap: balance;
+}
+
+.text-wrap-pretty {
+  text-wrap: pretty;
+}

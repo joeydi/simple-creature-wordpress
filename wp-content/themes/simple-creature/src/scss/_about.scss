@@ -1,0 +1,209 @@
+section.team {
+    .member {
+        position: relative;
+        margin: 30px 0;
+        text-align: center;
+        cursor: pointer;
+
+        img {
+            display: block;
+            width: 100%;
+        }
+    }
+
+    .caption {
+        position: relative;
+        z-index: 1;
+        top: -45px;
+        width: calc(100% - 60px);
+        max-width: 250px;
+        margin: 0 auto;
+        padding: 1.5rem;
+        line-height: 1.2;
+        background-color: $green;
+        color: $white;
+        box-shadow: 0 0 10px -1px rgba(0, 0, 0, 0.5);
+
+        strong {
+            display: block;
+            margin-bottom: 5px;
+        }
+    }
+
+    .careers {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    @include lg {
+        .caption {
+            top: -60px;
+            padding: 2rem 1.5rem;
+        }
+    }
+
+    @include lg {
+        .caption {
+            top: -45px;
+        }
+    }
+}
+
+section.awards {
+    .timeline {
+        position: relative;
+
+        &::before {
+            content: " ";
+            position: absolute;
+            left: 50%;
+            top: 0;
+            width: 1px;
+            height: 100%;
+            background-color: $light-grey;
+        }
+    }
+
+    .year {
+        position: relative;
+        margin-bottom: 40px;
+        text-align: center;
+
+        strong {
+            display: inline-block;
+            padding: 10px;
+            background-color: $lightest-grey;
+        }
+    }
+
+    .award {
+        margin-bottom: 40px;
+
+        &.has-image .award-header {
+            margin-top: -40px;
+        }
+    }
+
+    .award-header {
+        position: relative;
+        z-index: 1;
+        margin-left: 40px;
+        padding: 30px;
+        background-color: $white;
+
+        &::before {
+            content: " ";
+            position: absolute;
+            left: calc(50% - 20px);
+            top: 100%;
+            display: block;
+            width: 20px;
+            height: 20px;
+            background-color: $white;
+            transform: translate(-50%, -50%) rotate(45deg);
+        }
+    }
+
+    @include md {
+        .year {
+            margin: 40px 0 80px;
+
+            &:first-child {
+                margin: 0 0 100px;
+            }
+        }
+
+        .award {
+            width: calc(50% - 40px);
+            margin: -60px 0 40px;
+
+            &:first-child {
+                margin-top: 0;
+            }
+        }
+
+        .award.has-image {
+            margin-top: -100px;
+        }
+
+        .award.has-image + .award.has-image {
+            margin-top: -200px;
+        }
+
+        .award.even {
+            margin-left: calc(50% + 40px);
+
+            .award-header {
+                margin-left: 0;
+                margin-right: 40px;
+
+                &::before {
+                    left: 0;
+                }
+
+                &::after {
+                    left: -40px;
+                }
+            }
+        }
+
+        .award-header {
+            &::before {
+                left: 100%;
+                top: 50%;
+            }
+
+            &::after {
+                content: " ";
+                position: absolute;
+                left: calc(100% + 40px);
+                top: 50%;
+                display: block;
+                width: 6px;
+                height: 6px;
+                background-color: $grey;
+                border-radius: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+    }
+}
+
+.bio-modal {
+    margin: 80px 0;
+
+    .name {
+        display: block;
+        margin-bottom: 0.25em;
+        font-family: $font-family-sans-serif;
+        font-size: 36px;
+        color: $green;
+    }
+
+    .title {
+        display: block;
+        margin-bottom: 1em;
+        font-size: 28px;
+        color: $grey;
+    }
+
+    .headshot {
+        margin-bottom: 2em;
+        text-align: center;
+
+        p {
+            margin: -40px 40px 0 0;
+            padding: 20px;
+            background-color: #efefef;
+            font-size: 14px;
+            font-family: "Source Sans Pro", sans-serif;
+            position: relative;
+            z-index: 1;
+            text-align: left;
+
+            i {
+                font-size: 12px;
+            }
+        }
+    }
+}

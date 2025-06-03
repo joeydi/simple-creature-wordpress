@@ -1,0 +1,35 @@
+@view-transition {
+  navigation: auto;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes fade-out {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes slide-from-bottom {
+  from {
+    transform: translateY(10vw);
+  }
+}
+
+@keyframes slide-to-top {
+  to {
+    transform: translateY(-10vw);
+  }
+}
+
+::view-transition-old(root) {
+  animation: 250ms linear both fade-out, 500ms $ease-in both slide-to-top;
+}
+
+::view-transition-new(root) {
+  animation: 250ms linear 125ms both fade-in, 500ms $ease-out both slide-from-bottom;
+}

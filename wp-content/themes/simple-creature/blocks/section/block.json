@@ -1,0 +1,33 @@
+{
+  "name": "acf/section",
+  "title": "Section",
+  "description": "A custom Section block.",
+  "category": "formatting",
+  "icon": "columns",
+  "keywords": [
+    "content",
+    "fullwidth",
+    "alignfull"
+  ],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "block.php"
+  },
+  "supports": {
+    "anchor": true,
+    "classname": true,
+    "align": [
+      "full"
+    ],
+    "color": {
+      "text": false,
+      "background": true
+    }
+  },
+  "attributes": {
+    "align": {
+      "type": "string",
+      "default": "full"
+    }
+  }
+}

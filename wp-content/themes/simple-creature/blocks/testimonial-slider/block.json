@@ -1,0 +1,30 @@
+{
+  "name": "acf/testimonial-slider",
+  "title": "Testimonial Slider",
+  "description": "Testimonial Slider Block.",
+  "category": "formatting",
+  "icon": "format-quote",
+  "keywords": [
+    "slider",
+    "slides",
+    "cards"
+  ],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "block.php"
+  },
+  "supports": {
+    "anchor": true,
+    "classname": true,
+    "spacing": {
+      "margin": [
+        "top",
+        "bottom"
+      ]
+    },
+    "color": {
+      "text": true,
+      "background": true
+    }
+  }
+}

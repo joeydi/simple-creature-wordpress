@@ -1,0 +1,707 @@
+section.notification-banner {
+  margin-bottom: 10px;
+  padding: 20px 0;
+  background: $red;
+  color: $white;
+
+  a.btn {
+    white-space: nowrap;
+  }
+
+  .text-wrap a {
+    font-weight: $font-weight-bold;
+    color: $white;
+  }
+
+  @include sm {
+    .text-wrap {
+      margin-right: 20px;
+    }
+  }
+
+  @include md {
+    .text-wrap {
+      margin-right: 40px;
+    }
+  }
+
+  @include lg {
+    margin-bottom: 15px;
+
+    .text-wrap {
+      margin-right: 60px;
+    }
+  }
+}
+
+section.feature-cards {
+  picture {
+    position: relative;
+
+    &::before {
+      content: " ";
+      @include fill;
+      z-index: 1;
+      background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0.95));
+    }
+  }
+
+  .feature-details {
+    position: relative;
+    margin: 0 20px;
+    padding: 20px;
+    background-color: $white;
+    box-shadow: $small-shadow;
+    text-align: center;
+
+    &::before {
+      content: " ";
+      position: absolute;
+      left: -20px;
+      top: 0;
+      width: calc(100% + 40px);
+      height: 250px;
+      z-index: -1;
+      background-color: black;
+    }
+
+    img {
+      display: inline-block;
+    }
+  }
+
+  ul {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    list-style: none;
+
+    li {
+      margin: 5px;
+      padding: 3px 10px 5px;
+      background-color: $lightest-grey;
+      border-radius: 3px;
+      font-weight: $font-weight-semibold;
+    }
+  }
+
+  @include md {
+    .feature-details {
+      margin: 0 40px;
+      padding: 30px;
+
+      &::before {
+        left: -40px;
+        width: calc(100% + 80px);
+      }
+    }
+  }
+}
+
+section.large-feature {
+  .large-feature-card {
+    position: relative;
+    z-index: 3;
+    margin-right: 40px;
+    margin-bottom: -40px;
+    padding: 0 40px 40px 40px;
+    background: $white;
+  }
+
+  .large-feature-image {
+    position: relative;
+    z-index: 2;
+    margin-left: 20%;
+  }
+
+  .bg {
+    position: absolute;
+    z-index: 1;
+    left: 40px;
+    right: 40px;
+    top: 0;
+    bottom: 0;
+    background: url("../img/topo.svg") 0 0 repeat;
+    background-size: 800px auto;
+  }
+
+  @include sm {
+    .large-feature-card {
+      margin-left: -10px;
+    }
+  }
+
+  @include md {
+    .large-feature-card {
+      width: 50%;
+      margin-left: -40px;
+      margin-bottom: 15vw;
+    }
+
+    .large-feature-image {
+      position: absolute;
+      left: 33.33%;
+      top: 0;
+      width: calc(66.66% - 40px);
+      height: 100%;
+      margin-left: 0;
+
+      picture {
+        min-height: 100%;
+      }
+    }
+
+    .bg {
+      position: absolute;
+      z-index: 1;
+      left: 40px;
+      right: 40px;
+      top: 0;
+      bottom: 0;
+    }
+  }
+
+  @include lg {
+    .large-feature-card {
+      padding: 0 50px 50px 50px;
+      margin-left: -30px;
+    }
+
+    .large-feature-image {
+      width: calc(66.66% - 60px);
+    }
+
+    .bg {
+      left: 60px;
+      right: 60px;
+    }
+  }
+}
+
+section.small-feature {
+  .container {
+    position: relative;
+  }
+
+  .bg {
+    position: absolute;
+    z-index: 1;
+    left: var(--containerPadding);
+    top: 0;
+    width: calc(50% - 30px);
+    height: 100%;
+    background: url("../img/topo.svg") 0 0 repeat;
+    background-size: 800px auto;
+  }
+
+  .small-feature-card {
+    position: relative;
+    z-index: 3;
+    margin: -40px 0 0 40px;
+    padding: 30px 0 0 30px;
+    background-color: $white;
+  }
+
+  .small-feature-image {
+    position: relative;
+    z-index: 2;
+  }
+
+  @include md {
+    .small-feature-card {
+      margin: -80px 0 0 80px;
+      padding: 40px 40px 0 40px;
+    }
+  }
+
+  @include lg {
+    .bg {
+      top: auto;
+      bottom: 0;
+      width: calc(100% - var(--containerPadding) * 2);
+    }
+
+    .small-feature-card {
+      position: relative;
+      left: -1px;
+      top: -1px;
+      margin: 0;
+    }
+
+    &.align-left {
+      .small-feature-card {
+        padding: 0 40px 40px 0;
+      }
+
+      .small-feature-image {
+        margin-left: fluid-reverse(-200, -300, $lg);
+      }
+    }
+
+    &.align-right {
+      .small-feature-card {
+        left: 1px;
+        padding: 0 0 40px 40px;
+      }
+
+      .small-feature-image {
+        margin-right: fluid-reverse(-200, -300, $lg);
+      }
+    }
+  }
+}
+
+a.popup-video-thumbnail {
+  position: relative;
+  display: block;
+  overflow: hidden;
+
+  &::after {
+    content: " ";
+    position: absolute;
+    z-index: 1;
+    left: calc(50% - 40px);
+    top: calc(50% - 40px);
+    display: block;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.25);
+    background: url("../img/play.svg");
+    background-size: contain;
+    transition: transform 1s $ease-out;
+  }
+
+  img {
+    transition: transform 1s $snappy;
+  }
+
+  &:hover {
+    &::after {
+      transform: scale(1.1);
+    }
+
+    img {
+      transform: scale(1.05);
+    }
+  }
+}
+
+section.testimonials-slider {
+  position: relative;
+
+  .image-slider {
+    position: relative;
+    z-index: 2;
+    background-color: $green;
+
+    &::before {
+      content: " ";
+      @include fill;
+      z-index: 1;
+      background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+    }
+
+    picture {
+      width: 100%;
+    }
+  }
+
+  .testimonial-slider {
+    position: relative;
+    z-index: 3;
+    background-color: $dark-green;
+
+    .flickity-viewport {
+      transition: height 1s $snappy;
+    }
+
+    .flickity-prev-next-button {
+      background-color: transparent;
+      color: $green;
+
+      .flickity-button-icon {
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .testimonial {
+      width: 100%;
+      padding: 40px;
+      text-align: center;
+      font-family: $font-family-serif;
+      color: $white;
+
+      cite {
+        display: block;
+        font-family: $font-family-sans-serif;
+        font-style: normal;
+      }
+    }
+  }
+
+  .button-wrap {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    text-align: center;
+    width: 100%;
+    transform: translateY(50%);
+  }
+
+  @include md {
+    .testimonial-slider {
+      margin-top: -100px;
+    }
+  }
+
+  @include lg {
+    .container-fluid {
+      &::after {
+        left: 60px;
+        right: 60px;
+      }
+    }
+
+    .testimonial-slider {
+      .testimonial {
+        padding: 60px;
+      }
+    }
+  }
+}
+
+section.hero-card {
+  .hero-card-card {
+    position: relative;
+    margin: -10vw 0 0 0;
+    padding: 30px;
+    background-color: $white;
+  }
+
+  @include md {
+    .hero-card-card {
+      margin: -20vw 0 0 0;
+      padding: 40px;
+    }
+  }
+}
+
+a.career {
+  padding: 30px 20px;
+  color: $black;
+  background-color: $white;
+  border-top: 2px solid $lightest-grey;
+  transition: background-color 0.25s linear, border-color 0.25s linear;
+
+  &:hover {
+    text-decoration: none;
+    border-top: 2px solid $lightest-grey;
+    background-color: $lightest-grey;
+  }
+
+  @include md {
+    padding: 50px 20px;
+  }
+}
+
+a.project-excerpt {
+  position: relative;
+  display: block;
+  margin-bottom: 40px;
+  color: $black;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  .project-excerpt-card {
+    margin: -40px 40px 0 0;
+    padding: 30px;
+    background-color: $white;
+  }
+
+  @include md {
+    margin-bottom: 60px;
+
+    .project-excerpt-card {
+      margin: -120px 0 0 0;
+      padding: 40px;
+    }
+  }
+
+  @include lg {
+    margin-bottom: 80px;
+
+    .container {
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      transform: translate(-50%);
+    }
+
+    .project-excerpt-card {
+      padding-bottom: 20px;
+    }
+  }
+}
+
+div.call-to-action {
+  position: relative;
+  padding: 20px 0;
+
+  &::before {
+    content: " ";
+    position: absolute;
+    z-index: 1;
+    right: 0;
+    top: 0;
+    width: calc(83.33% - 10px);
+    height: 100%;
+    background: url("../img/topo.svg") 0 0 repeat;
+    background-size: 800px auto;
+  }
+
+  &::after {
+    content: " ";
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    top: 20px;
+    width: calc(33.33% - 10px);
+    height: calc(100% - 20px);
+    background-color: $dark-green;
+  }
+
+  .content {
+    position: relative;
+    z-index: 3;
+    padding: 30px 30px 30px 40px;
+    background-color: $white;
+    font-size: rem(20px);
+
+    .icon {
+      position: absolute;
+      left: -20px;
+      top: 20px;
+      color: $green;
+      width: 50px;
+      height: 50px;
+    }
+
+    a {
+      font-weight: $font-weight-semibold;
+    }
+
+    > *:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  @include md {
+    &::before {
+      width: calc(91.66% - 10px);
+    }
+
+    .content {
+      padding: 40px 60px;
+      font-size: rem(22px);
+
+      .icon {
+        position: absolute;
+        left: -30px;
+        width: 72px;
+        height: 72px;
+      }
+    }
+  }
+
+  @include lg {
+    &::before {
+      width: calc(83.33% - 10px);
+    }
+
+    .content {
+      font-size: rem(24px);
+
+      .icon {
+        left: -100px;
+        top: calc(50% - 36px);
+      }
+    }
+  }
+}
+
+section.image-header {
+  .heading-wrap {
+    position: relative;
+    margin: -30px 60px 0 0;
+    padding: 30px;
+    background-color: $white;
+  }
+
+  @include md {
+    .heading-wrap {
+      margin: -8vw 0 0 -40px;
+      padding: 40px;
+    }
+  }
+}
+
+.instagram-carousel {
+  position: relative;
+
+  &:before {
+    content: " ";
+    position: absolute;
+    left: 0;
+    top: 25%;
+    width: 100%;
+    height: 50%;
+    background: url("../img/topo.svg") 0 0 repeat;
+    background-size: 800px auto;
+  }
+
+  .instagram-carousel-row {
+    position: relative;
+    display: flex;
+    flex-flow: row nowrap;
+    width: 250%;
+
+    &:nth-child(1) {
+      transform: translate(-13%);
+    }
+    &:nth-child(2) {
+      transform: translate(-60%);
+    }
+  }
+
+  .instagram-photo {
+    width: 100%;
+    margin: 20px;
+    border: 10px solid $white;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    transition: transform 1s $zippy;
+
+    &:hover {
+      transform: scale(1.125) rotate(0) !important;
+    }
+  }
+}
+
+section.numbered-steps {
+  .steps-wrap {
+    position: relative;
+    padding: 40px 0;
+    background: url("../img/numbered-steps-bg.jpg") 0 50% no-repeat;
+    background-size: contain;
+
+    &::before {
+      content: " ";
+      position: absolute;
+      left: 29px;
+      top: 0;
+      display: block;
+      width: 2px;
+      height: 100%;
+      background-color: $black;
+    }
+  }
+
+  .step {
+    position: relative;
+    display: flex;
+    gap: 30px;
+    margin: 50px 0 50px -30px;
+
+    .number {
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 60px;
+      height: 60px;
+      margin-top: -20px;
+      font-size: rem(24px);
+      font-weight: $font-weight-bold;
+      color: $white;
+      background-color: $green;
+      border-radius: 50%;
+    }
+
+    .description {
+      width: 100%;
+    }
+  }
+
+  .steps-wrap.layout-horizontal {
+    padding-bottom: 0;
+    background: transparent;
+
+    &::before {
+      left: 50%;
+      top: 80px;
+      width: 100vw;
+      height: 2px;
+      transform: translateX(-50%);
+    }
+
+    .step {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      margin: 20px 0;
+    }
+  }
+
+  @include md {
+    .steps-wrap::before {
+      left: 50%;
+    }
+
+    .step {
+      margin: 75px 0 75px -60px;
+
+      .number {
+        width: 80px;
+        height: 80px;
+        font-size: rem(32px);
+      }
+    }
+  }
+
+  @include lg {
+    .step {
+      margin: 100px 0 100px -70px;
+    }
+  }
+}
+
+section.numbered-steps + section.featured-projects {
+  margin-top: -40px;
+
+  @include sm {
+    margin-top: -60px;
+  }
+
+  @include md {
+    margin-top: -80px;
+  }
+
+  @include lg {
+    margin-top: -100px;
+  }
+
+  @include xl {
+    margin-top: -120px;
+  }
+}

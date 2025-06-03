@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="81px" height="81px" viewBox="0 0 81 81" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>Play Button</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="About-Us" transform="translate(-867.000000, -1712.000000)">
+            <g id="Working-with-Us" transform="translate(151.000000, 1505.000000)">
+                <g id="Play-Button" transform="translate(716.000000, 207.000000)">
+                    <circle id="Oval" fill="#48A27B" cx="40.5" cy="40.5" r="40.5"></circle>
+                    <path d="M31.5,26 L31.5,53 C31.5,55.0032518 33.7382895,56.1928867 35.3986821,55.0721217 L55.3986821,41.5721217 C56.867106,40.5809356 56.867106,38.4190644 55.3986821,37.4278783 L35.3986821,23.9278783 C33.7382895,22.8071133 31.5,23.9967482 31.5,26 Z" id="Path" fill="#FFFFFF" fill-rule="nonzero"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
